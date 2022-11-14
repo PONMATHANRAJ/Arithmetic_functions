@@ -10,11 +10,13 @@
 operator=$2
 
 case ${operator} in
-	+) r=`expr $1 $2 $3` #echo `echo "$1 $2 $3" | bc`
-	echo $r
-	;;
-	-) r=`expr $1 $2 $3` #echo `echo "$1 $2 $3" | bc`
-	echo $r  
-        ;;
+        /) r=`expr $1 $2 $3` #echo `echo "$1 $2 $3" | bc`
+         echo $r  ;;
+        \\*) r=`expr $1 \* $3` #echo `echo "$1 \* $3" | bc`   #$(($1*$3))
+           echo $r
+                ;;
+
        *) echo "Error: Invaid number of arguments"
+         echo "Usage: ./Arithmetic.sh 1 \ 2"
+
 esac
