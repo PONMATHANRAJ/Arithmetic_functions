@@ -1,0 +1,20 @@
+ #!/usr/bin/bash
+# Script for arithmetic calculator using command line arguments
+#check for arguments
+#if [ $# -nq 3 ]
+#then 
+#	echo "Error: Invaid number of arguments"
+ #       echo "Usage: ./Arithmetic.sh 1 + 2"
+#fi
+
+operator=$2
+
+case ${operator} in
+	+) r=`expr $1 $2 $3` #echo `echo "$1 $2 $3" | bc`
+	echo $r
+	;;
+	-) r=`expr $1 $2 $3` #echo `echo "$1 $2 $3" | bc`
+	echo $r  
+        ;;
+       *) echo "Error: Invaid number of arguments"
+esac
